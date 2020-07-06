@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:emerald"
+  },
+  "result": "tutorial:ruby",
+  "experience": 1.0,
+  "cookingtime": 100
+}
