@@ -1,9 +1,7 @@
 package com.technovision.tutorial.util;
 
 import com.technovision.tutorial.Tutorial;
-import com.technovision.tutorial.blocks.BlockItemBase;
 import com.technovision.tutorial.blocks.RubyBlock;
-import com.technovision.tutorial.items.ItemBase;
 import com.technovision.tutorial.tools.ModItemTier;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
@@ -12,6 +10,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+@SuppressWarnings("unused")
 public class RegistryHandler {
 
     public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, Tutorial.MOD_ID);
@@ -23,7 +22,7 @@ public class RegistryHandler {
     }
 
     // Items
-    public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", ItemBase::new);
+    public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", () -> new Item(new Item.Properties().group(Tutorial.TAB)));
 
     // Tools
     public static final RegistryObject<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword", () ->
@@ -45,6 +44,6 @@ public class RegistryHandler {
     public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block", RubyBlock::new);
 
     // Block Items
-    public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", () -> new BlockItemBase(RUBY_BLOCK.get()));
+    public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", () -> new BlockItem(RUBY_BLOCK.get(), new Item.Properties().group(Tutorial.TAB)));
 
 }
