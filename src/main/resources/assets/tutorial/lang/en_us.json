@@ -6,5 +6,9 @@
   "item.tutorial.ruby_pickaxe": "Ruby Pickaxe",
   "item.tutorial.ruby_shovel": "Ruby Shovel",
   "item.tutorial.ruby_axe": "Ruby Axe",
-  "item.tutorial.ruby_hoe": "Ruby Hoe"
+  "item.tutorial.ruby_hoe": "Ruby Hoe",
+  "item.tutorial.ruby_helmet": "Ruby Helmet",
+  "item.tutorial.ruby_chestplate": "Ruby Chestplate",
+  "item.tutorial.ruby_leggings": "Ruby Leggings",
+  "item.tutorial.ruby_boots": "Ruby Boots"
 }
