@@ -19,18 +19,18 @@ public enum ModArmorMaterial implements IArmorMaterial {
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[] { 11, 16, 15, 13 };
     private final String name;
-    private final int maxDamageFactor; //Durability - Iron=15, Diamond=33, Gold=7, Leather=5
-    private final int[] damageReductionAmountArray; //Armor Bar Protection, 1 = 1/2 armor bar
+    private final int maxDamageFactor;
+    private final int[] damageReductionAmountArray;
     private final int enchantability;
     private final SoundEvent soundEvent;
-    private final float toughness; //Increases Protection - 0.0F = Disabled
+    private final float toughness;
     private final Supplier<Ingredient> repairMaterial;
 
-    ModArmorMaterial(String name, int maxDamageFactor, int[] damageReductionAmount, int enchantability,
-                      SoundEvent soundEvent, float toughness, Supplier<Ingredient> repairMaterial) {
+    ModArmorMaterial(String name, int maxDamageFactor, int[] damageReductionAmountArray, int enchantability,
+                     SoundEvent soundEvent, float toughness, Supplier<Ingredient> repairMaterial) {
         this.name = name;
         this.maxDamageFactor = maxDamageFactor;
-        this.damageReductionAmountArray = damageReductionAmount;
+        this.damageReductionAmountArray = damageReductionAmountArray;
         this.enchantability = enchantability;
         this.soundEvent = soundEvent;
         this.toughness = toughness;
