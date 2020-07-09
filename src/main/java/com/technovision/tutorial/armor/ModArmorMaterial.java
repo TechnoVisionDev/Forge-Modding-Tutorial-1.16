@@ -5,7 +5,6 @@ import com.technovision.tutorial.util.RegistryHandler;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.LazyValue;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.api.distmarker.Dist;
@@ -15,17 +14,17 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterial implements IArmorMaterial {
 
-    RUBY(Tutorial.MOD_ID + ":ruby", 5, new int[] { 7, 9, 11, 7 }, 18,
-            SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> { return Ingredient.fromItems(RegistryHandler.RUBY_HELMET.get()); });
+    RUBY(Tutorial.MOD_ID + ":ruby", 25, new int[] { 2, 5, 6, 2 }, 18,
+            SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F, () -> { return Ingredient.fromItems(RegistryHandler.RUBY.get()); });
 
-    private static final int[] MAX_DAMAGE_ARRAY = new int[] { 16, 16, 16, 16 };
+    private static final int[] MAX_DAMAGE_ARRAY = new int[] { 11, 16, 15, 13 };
     private final String name;
-    private final int maxDamageFactor;
-    private final int[] damageReductionAmountArray;
+    private final int maxDamageFactor; //Durability - Iron=15, Diamond=33, Gold=7, Leather=5
+    private final int[] damageReductionAmountArray; //Armor Bar Protection, 1 = 1/2 armor bar
     private final int enchantability;
     private final SoundEvent soundEvent;
-    private final float toughness;
-    private final LazyValue<Ingredient> repairMaterial;
+    private final float toughness; //Increases Protection - 0.0F = Disabled
+    private final Supplier<Ingredient> repairMaterial;
 
     ModArmorMaterial(String name, int maxDamageFactor, int[] damageReductionAmount, int enchantability,
                       SoundEvent soundEvent, float toughness, Supplier<Ingredient> repairMaterial) {
@@ -35,7 +34,7 @@ public enum ModArmorMaterial implements IArmorMaterial {
         this.enchantability = enchantability;
         this.soundEvent = soundEvent;
         this.toughness = toughness;
-        this.repairMaterial = new LazyValue<>(repairMaterial);
+        this.repairMaterial = repairMaterial;
     }
 
     @Override
@@ -60,7 +59,7 @@ public enum ModArmorMaterial implements IArmorMaterial {
 
     @Override
     public Ingredient getRepairMaterial() {
-        return this.repairMaterial.getValue();
+        return this.repairMaterial.get();
     }
 
     @OnlyIn(Dist.CLIENT)
