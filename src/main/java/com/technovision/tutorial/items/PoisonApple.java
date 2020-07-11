@@ -12,11 +12,12 @@ public class PoisonApple extends Item {
         super(new Item.Properties()
                 .group(Tutorial.TAB)
                 .food(new Food.Builder()
-                        .hunger(6)
+                        .hunger(4)
                         .saturation(1.2f)
-                        .effect(new EffectInstance(Effects.NAUSEA, 300, 1), 1)
-                        .effect(new EffectInstance(Effects.POISON, 300, 2), 1)
-                        .effect(new EffectInstance(Effects.HUNGER, 300, 1), 0.8f)
+                        .effect(new EffectInstance(Effects.NAUSEA, 300, 0), 1)
+                        .effect(new EffectInstance(Effects.POISON, 300, 1), 1)
+                        .effect(new EffectInstance(Effects.HUNGER, 300, 0), 0.3f)
+                        .setAlwaysEdible()
                         .build())
         );
     }
