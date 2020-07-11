@@ -5,6 +5,7 @@ import com.technovision.tutorial.armor.ModArmorMaterial;
 import com.technovision.tutorial.blocks.BlockItemBase;
 import com.technovision.tutorial.blocks.RubyBlock;
 import com.technovision.tutorial.items.ItemBase;
+import com.technovision.tutorial.items.PoisonApple;
 import com.technovision.tutorial.tools.ModItemTier;
 import net.minecraft.block.Block;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -26,6 +27,7 @@ public class RegistryHandler {
 
     // Items
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", ItemBase::new);
+    public static final RegistryObject<PoisonApple> POISON_APPLE = ITEMS.register("poison_apple", PoisonApple::new);
 
     // Tools
     public static final RegistryObject<SwordItem> RUBY_SWORD = ITEMS.register("ruby_sword", () ->
