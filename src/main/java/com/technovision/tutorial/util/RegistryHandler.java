@@ -2,9 +2,7 @@ package com.technovision.tutorial.util;
 
 import com.technovision.tutorial.Tutorial;
 import com.technovision.tutorial.armor.ModArmorMaterial;
-import com.technovision.tutorial.blocks.BlockItemBase;
 import com.technovision.tutorial.blocks.RubyBlock;
-import com.technovision.tutorial.items.ItemBase;
 import com.technovision.tutorial.items.PoisonApple;
 import com.technovision.tutorial.tools.ModItemTier;
 import net.minecraft.block.Block;
@@ -26,7 +24,7 @@ public class RegistryHandler {
     }
 
     // Items
-    public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", ItemBase::new);
+    public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", () -> new Item(new Item.Properties().group(Tutorial.TAB)));
     public static final RegistryObject<PoisonApple> POISON_APPLE = ITEMS.register("poison_apple", PoisonApple::new);
 
     // Tools
@@ -55,6 +53,6 @@ public class RegistryHandler {
     public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block", RubyBlock::new);
 
     // Block Items
-    public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", () -> new BlockItemBase(RUBY_BLOCK.get()));
+    public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", () -> new BlockItem(RUBY_BLOCK.get(), new Item.Properties().group(Tutorial.TAB)));
 
 }
