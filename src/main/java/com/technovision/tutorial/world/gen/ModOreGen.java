@@ -1,4 +1,4 @@
-package com.technovision.tutorial.world;
+package com.technovision.tutorial.world.gen;
 
 import com.technovision.tutorial.Tutorial;
 import com.technovision.tutorial.util.RegistryHandler;
@@ -28,15 +28,15 @@ public class ModOreGen {
 
             //World Generation
             if (biome.getCategory() == Biome.Category.NETHER) {
-                genOre(biome, 15, 20, 5, 50, OreFeatureConfig.FillerBlockType.NETHERRACK, RegistryHandler.RUBY_BLOCK.get().getDefaultState(), 6);
+                genOre(biome, 15, 20, 5, 50, OreFeatureConfig.FillerBlockType.NETHERRACK, RegistryHandler.RUBY_ORE.get().getDefaultState(), 6);
 
-            //End Generation
+                //End Generation
             } else if (biome.getCategory() == Biome.Category.THEEND) {
-                genOre(biome, 15, 5, 5, 80, END_STONE, RegistryHandler.RUBY_BLOCK.get().getDefaultState(), 8);
+                genOre(biome, 15, 5, 5, 80, END_STONE, RegistryHandler.RUBY_ORE.get().getDefaultState(), 8);
 
-            //Nether Generation
+                //Nether Generation
             } else {
-                genOre(biome, 15, 5, 5, 80, OreFeatureConfig.FillerBlockType.NATURAL_STONE, RegistryHandler.RUBY_BLOCK.get().getDefaultState(), 12);
+                genOre(biome, 15, 5, 5, 80, OreFeatureConfig.FillerBlockType.NATURAL_STONE, RegistryHandler.RUBY_ORE.get().getDefaultState(), 12);
             }
         }
     }
