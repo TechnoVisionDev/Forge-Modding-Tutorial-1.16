@@ -2,6 +2,7 @@ package com.technovision.tutorial.util;
 
 import com.technovision.tutorial.Tutorial;
 import com.technovision.tutorial.armor.ModArmorMaterial;
+import com.technovision.tutorial.blocks.Oven;
 import com.technovision.tutorial.blocks.RubyBlock;
 import com.technovision.tutorial.blocks.RubyOre;
 import com.technovision.tutorial.items.PoisonApple;
@@ -53,8 +54,10 @@ public class RegistryHandler {
     // Blocks
     public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block", RubyBlock::new);
     public static final RegistryObject<Block> RUBY_ORE = BLOCKS.register("ruby_ore", RubyOre::new);
+    public static final RegistryObject<Block> OVEN = BLOCKS.register("oven", Oven::new);
 
     // Block Items
     public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block", () -> new BlockItem(RUBY_BLOCK.get(), new Item.Properties().group(Tutorial.TAB)));
     public static final RegistryObject<Item> RUBY_ORE_ITEM = ITEMS.register("ruby_ore", () -> new BlockItem(RUBY_ORE.get(), new Item.Properties().group(Tutorial.TAB)));
+    public static final RegistryObject<Item> OVEN_ITEM = ITEMS.register("oven", () -> new BlockItem(OVEN.get(), new Item.Properties().group(Tutorial.TAB)));
 }

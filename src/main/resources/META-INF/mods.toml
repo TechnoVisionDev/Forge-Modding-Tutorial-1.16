@@ -8,7 +8,7 @@ issueTrackerURL="http://my.issue.tracker/" #optional
 
 modId="tutorial" #mandatory
 
-version="1.15.2-1.0.0" #mandatory
+version="1.16.1-1.0.0" #mandatory
 
 displayName="Tutorial Mod" #mandatory
 
@@ -16,7 +16,7 @@ updateJSONURL="http://myurl.me/" #optional
 
 displayURL="http://example.com/" #optional
 
-logoFile="examplemod.png" #optional
+logoFile="logo.png" #optional
 
 credits="Thanks to my incredible subscribers!" #optional
 
