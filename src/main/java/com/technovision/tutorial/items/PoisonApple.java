@@ -1,4 +1,4 @@
-package com.technovision.tutorial.objects.items;
+package com.technovision.tutorial.items;
 
 import com.technovision.tutorial.Tutorial;
 import net.minecraft.item.Food;

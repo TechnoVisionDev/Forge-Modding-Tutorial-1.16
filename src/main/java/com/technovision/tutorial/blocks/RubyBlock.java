@@ -1,4 +1,4 @@
-package com.technovision.tutorial.objects.blocks;
+package com.technovision.tutorial.blocks;
 
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
