@@ -1,7 +1,7 @@
-package com.technovision.tutorial.armor;
+package com.technovision.tutorial.util.enums;
 
 import com.technovision.tutorial.Tutorial;
-import com.technovision.tutorial.util.RegistryHandler;
+import com.technovision.tutorial.init.ModItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 public enum ModArmorMaterial implements IArmorMaterial {
 
     RUBY(Tutorial.MOD_ID + ":ruby", 25, new int[] { 2, 5, 6, 2 }, 18,
-            SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0, () -> { return Ingredient.fromItems(RegistryHandler.RUBY.get()); },0);
+            SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0, () -> { return Ingredient.fromItems(ModItems.RUBY.get()); },0);
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[] { 11, 16, 15, 13 };
     private final String name;

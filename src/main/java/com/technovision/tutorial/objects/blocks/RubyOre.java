@@ -1,4 +1,4 @@
-package com.technovision.tutorial.blocks;
+package com.technovision.tutorial.objects.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

@@ -1,7 +1,8 @@
 package com.technovision.tutorial.events;
 
 import com.technovision.tutorial.Tutorial;
-import com.technovision.tutorial.util.RegistryHandler;
+import com.technovision.tutorial.init.ModBlocks;
+import com.technovision.tutorial.init.ModItems;
 import net.minecraft.client.gui.screen.inventory.CraftingScreen;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.SheepEntity;
@@ -39,13 +40,13 @@ public class ModClientEvents {
         if (player.getHeldItemMainhand().getItem() == Items.STICK) {
             Tutorial.LOGGER.info("Player tried to jump with a stick!");
             World world = player.getEntityWorld();
-            world.setBlockState(player.func_233580_cy_().add(0, -1, 0), RegistryHandler.RUBY_BLOCK.get().getDefaultState());
+            world.setBlockState(player.func_233580_cy_().add(0, -1, 0), ModBlocks.RUBY_BLOCK.get().getDefaultState());
         }
     }
 
     @SubscribeEvent
     public static void onDamageSheep(AttackEntityEvent event) {
-        if (event.getEntityLiving().getHeldItemMainhand().getItem() == RegistryHandler.POISON_APPLE.get()) {
+        if (event.getEntityLiving().getHeldItemMainhand().getItem() == ModItems.POISON_APPLE.get()) {
             if (event.getTarget().isAlive()) {
                 LivingEntity target = (LivingEntity) event.getTarget();
                 if (target instanceof SheepEntity) {
