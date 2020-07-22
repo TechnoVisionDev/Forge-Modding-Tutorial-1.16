@@ -1,9 +1,9 @@
 package com.technovision.tutorial.init;
 
 import com.technovision.tutorial.Tutorial;
-import com.technovision.tutorial.objects.blocks.Oven;
-import com.technovision.tutorial.objects.blocks.RubyBlock;
-import com.technovision.tutorial.objects.blocks.RubyOre;
+import com.technovision.tutorial.blocks.Oven;
+import com.technovision.tutorial.blocks.RubyBlock;
+import com.technovision.tutorial.blocks.RubyOre;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;

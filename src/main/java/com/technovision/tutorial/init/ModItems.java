@@ -1,8 +1,8 @@
 package com.technovision.tutorial.init;
 
 import com.technovision.tutorial.Tutorial;
+import com.technovision.tutorial.items.PoisonApple;
 import com.technovision.tutorial.util.enums.ModArmorMaterial;
-import com.technovision.tutorial.objects.items.PoisonApple;
 import com.technovision.tutorial.util.enums.ModItemTier;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
