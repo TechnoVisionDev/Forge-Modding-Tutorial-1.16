@@ -1,10 +1,14 @@
 package com.technovision.tutorial;
 
+import com.technovision.tutorial.entities.HogEntity;
 import com.technovision.tutorial.init.ModBlocks;
+import com.technovision.tutorial.init.ModEntityType;
 import com.technovision.tutorial.init.ModItems;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -24,11 +28,16 @@ public class Tutorial
 
         ModBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModEntityType.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event) { }
+    private void setup(final FMLCommonSetupEvent event) {
+        DeferredWorkQueue.runLater(() -> {
+            GlobalEntityTypeAttributes.put(ModEntityType.GOAT.get(), HogEntity.setCustomAttributes().func_233813_a_());
+        });
+    }
 
     private void doClientStuff(final FMLClientSetupEvent event) { }
 
