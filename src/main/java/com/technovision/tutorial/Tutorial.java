@@ -34,8 +34,8 @@ public class Tutorial
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        DeferredWorkQueue.runLater(() -> {   // func_233813_a_() --> create()
-            GlobalEntityTypeAttributes.put(ModEntityType.HOG.get(), HogEntity.setCustomAttributes().func_233813_a_());
+        DeferredWorkQueue.runLater(() -> {
+            GlobalEntityTypeAttributes.put(ModEntityType.HOG.get(), HogEntity.setCustomAttributes().create());
         });
     }
 

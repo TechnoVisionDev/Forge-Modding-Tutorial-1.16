@@ -40,7 +40,7 @@ public class ModClientEvents {
         if (player.getHeldItemMainhand().getItem() == Items.STICK) {
             Tutorial.LOGGER.info("Player tried to jump with a stick!");
             World world = player.getEntityWorld();
-            world.setBlockState(player.func_233580_cy_().add(0, -1, 0), ModBlocks.RUBY_BLOCK.get().getDefaultState());
+            world.setBlockState(player.getPosition().add(0, -1, 0), ModBlocks.RUBY_BLOCK.get().getDefaultState());
         }
     }
 
