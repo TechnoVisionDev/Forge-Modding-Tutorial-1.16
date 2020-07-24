@@ -17,8 +17,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod("tutorial")
-public class Tutorial
-{
+public class Tutorial {
+
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "tutorial";
 

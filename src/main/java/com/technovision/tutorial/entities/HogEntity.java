@@ -23,7 +23,7 @@ public class HogEntity extends AnimalEntity {
     private static final Ingredient TEMPTATION_ITEMS = Ingredient.fromItems(Items.CARROT, Items.POTATO, Items.BEETROOT);
 
     private EatGrassGoal eatGrassGoal;
-    private int goatTimer;
+    private int hogTimer;
 
     public HogEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
@@ -57,6 +57,11 @@ public class HogEntity extends AnimalEntity {
     }
 
     @Override
+    protected int getExperiencePoints(PlayerEntity player) {
+        return 1 + this.world.rand.nextInt(4);
+    }
+
+    @Override
     protected SoundEvent getAmbientSound() { return SoundEvents.ENTITY_PIG_AMBIENT; }
 
     @Override
@@ -74,14 +79,14 @@ public class HogEntity extends AnimalEntity {
 
     @Override
     protected void updateAITasks() {
-        this.goatTimer = this.eatGrassGoal.getEatingGrassTimer();
+        this.hogTimer = this.eatGrassGoal.getEatingGrassTimer();
         super.updateAITasks();
     }
 
     @Override
     public void livingTick() {
         if (this.world.isRemote) {
-            this.goatTimer = Math.max(0, this.goatTimer - 1);
+            this.hogTimer = Math.max(0, this.hogTimer - 1);
         }
         super.livingTick();
     }
@@ -89,10 +94,9 @@ public class HogEntity extends AnimalEntity {
     @OnlyIn(Dist.CLIENT)
     public void handleStatusUpdate(byte id) {
         if (id == 10) {
-            this.goatTimer = 40;
+            this.hogTimer = 40;
         } else {
             super.handleStatusUpdate(id);
         }
-
     }
 }
