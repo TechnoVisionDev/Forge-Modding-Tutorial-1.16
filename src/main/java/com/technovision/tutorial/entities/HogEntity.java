@@ -38,7 +38,7 @@ public class HogEntity extends AnimalEntity {
 
     @Override
     public AgeableEntity createChild(AgeableEntity ageable) {
-        return ModEntityType.GOAT.get().create(this.world);
+        return ModEntityType.HOG.get().create(this.world);
     }
 
     @Override
