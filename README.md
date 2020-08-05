@@ -13,7 +13,7 @@ The complete source code for my Forge 1.16 modding tutorial series. If you haven
 
 ### 📺 Latest YouTube Videos
 <!-- YOUTUBE:START -->
-- [Minecraft 1.16: Modding Tutorial - Natural Entity Spawning (#19)]()
+- [Minecraft 1.16: Modding Tutorial - Natural Entity Spawning (#19)](https://youtu.be/Vcz4Adcu5bY)
 - [Spigot: Custom Plugin Tutorial - Custom Inventories (#8)](https://youtu.be/dEwv7ay1RCI)
 - [Minecraft 1.16: Modding Tutorial - Custom Entities (#18)](https://youtu.be/zJkQc2A1PIk)
 - [Minecraft 1.16: Modding Tutorial - Update Mappings (#17)](https://youtu.be/NtYMgZ0_1PA)
