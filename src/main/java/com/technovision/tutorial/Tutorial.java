@@ -4,15 +4,10 @@ import com.technovision.tutorial.entities.HogEntity;
 import com.technovision.tutorial.init.ModBlocks;
 import com.technovision.tutorial.init.ModEntityType;
 import com.technovision.tutorial.init.ModItems;
-import com.technovision.tutorial.items.ModSpawnEggItem;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -22,7 +17,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod("tutorial")
-@Mod.EventBusSubscriber(modid = Tutorial.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class Tutorial {
 
     public static final Logger LOGGER = LogManager.getLogger();
@@ -54,10 +48,5 @@ public class Tutorial {
             return new ItemStack(ModItems.RUBY.get());
         }
     };
-
-    @SubscribeEvent
-    public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event) {
-        ModSpawnEggItem.initSpawnEggs();
-    }
 
 }
