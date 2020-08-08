@@ -11,7 +11,6 @@ import net.minecraft.item.SpawnEggItem;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.util.Lazy;
-import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
@@ -19,18 +18,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class ModSpawnEgg extends SpawnEggItem {
+public class ModSpawnEggItem extends SpawnEggItem {
 
-    protected static final List<ModSpawnEgg> UNADDED_EGGS = new ArrayList<ModSpawnEgg>();
+    protected static final List<ModSpawnEggItem> UNADDED_EGGS = new ArrayList<>();
     private final Lazy<? extends EntityType<?>> entityTypeSupplier;
 
-    public ModSpawnEgg(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour, final Item.Properties properties) {
-        super(null, primaryColour, secondaryColour, properties);
-        this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
-        UNADDED_EGGS.add(this);
-    }
-
-    public ModSpawnEgg(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour, final Item.Properties properties) {
+    public ModSpawnEggItem(final RegistryObject<? extends EntityType<?>> entityTypeSupplier, final int primaryColour, final int secondaryColour, final Item.Properties properties) {
         super(null, primaryColour, secondaryColour, properties);
         this.entityTypeSupplier = Lazy.of(entityTypeSupplier::get);
         UNADDED_EGGS.add(this);

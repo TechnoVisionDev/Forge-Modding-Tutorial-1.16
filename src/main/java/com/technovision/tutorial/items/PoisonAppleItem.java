@@ -6,9 +6,9 @@ import net.minecraft.item.Item;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 
-public class PoisonApple extends Item {
+public class PoisonAppleItem extends Item {
 
-    public PoisonApple() {
+    public PoisonAppleItem() {
         super(new Item.Properties()
                 .group(Tutorial.TAB)
                 .food(new Food.Builder()

@@ -4,7 +4,7 @@ import com.technovision.tutorial.entities.HogEntity;
 import com.technovision.tutorial.init.ModBlocks;
 import com.technovision.tutorial.init.ModEntityType;
 import com.technovision.tutorial.init.ModItems;
-import com.technovision.tutorial.items.ModSpawnEgg;
+import com.technovision.tutorial.items.ModSpawnEggItem;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
@@ -57,7 +57,7 @@ public class Tutorial {
 
     @SubscribeEvent
     public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event) {
-        ModSpawnEgg.initSpawnEggs();
+        ModSpawnEggItem.initSpawnEggs();
     }
 
 }
