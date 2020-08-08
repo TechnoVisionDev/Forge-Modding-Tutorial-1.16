@@ -1,6 +1,7 @@
 package com.technovision.tutorial.init;
 
 import com.technovision.tutorial.Tutorial;
+import com.technovision.tutorial.items.ModSpawnEgg;
 import com.technovision.tutorial.items.PoisonApple;
 import com.technovision.tutorial.util.enums.ModArmorMaterial;
 import com.technovision.tutorial.util.enums.ModItemTier;
@@ -16,7 +17,11 @@ public class ModItems {
 
     // Items
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", () -> new Item(new Item.Properties().group(Tutorial.TAB)));
+
     public static final RegistryObject<PoisonApple> POISON_APPLE = ITEMS.register("poison_apple", PoisonApple::new);
+
+    public static final RegistryObject<ModSpawnEgg> HOG_SPAWN_EGG = ITEMS.register("hog_spawn_egg",
+            () -> new ModSpawnEgg(ModEntityType.HOG, 0xE1A68B, 0x99593B, new Item.Properties().group(Tutorial.TAB)));
 
     // Block Items
     public static final RegistryObject<Item> RUBY_BLOCK_ITEM = ITEMS.register("ruby_block",
